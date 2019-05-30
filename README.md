@@ -54,3 +54,46 @@ public class GPA {
   }
   
 }
+CGPA CALUATOR CODE-------
+
+
+package gpa;
+
+import java.util.Scanner;
+public class Cgpa {
+    
+public void display()
+{
+     Scanner input = new Scanner(System.in);
+     int sem;
+     int[] array = new int[10];
+     float[] array2 = new float[10];
+     int sumOfCh = 0;
+     float total = 0;
+     
+     System.out.println("What semester are u currently in?");
+     sem = input.nextInt();
+     
+     for(int a=0; a<sem; a++){
+         System.out.println("Enter semester no."+" "+ (a+1)+ "credit hour.");
+         array[a] = input.nextInt();
+     }
+     
+     for(int b=0; b<sem; b++){
+         System.out.println("Enter ur gpa of semester no."+" "+ (b+1));
+         array2[b] = input.nextFloat();
+     }
+     for(int c=0; c<sem; c++){
+         
+         sumOfCh += array[c];
+         total += array[c] * array2[c];
+         
+     }
+     System.out.println(total);
+     
+    float cgpa = 0;
+    cgpa = total / sumOfCh;
+    System.out.println("Cgpa = "+ cgpa);
+}
+
+}
